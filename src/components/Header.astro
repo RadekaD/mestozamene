@@ -6,52 +6,81 @@ const mainColor = "#F38181";
 const backgroundImageUrl = `https://source.unsplash.com/random/?worried,girl`;
 ---
 
-
 <header style={`background-image: url(${backgroundImageUrl})`}>
-  <nav>
-    <div class="logo">
-      <picture>
-        <source srcset="../../public/logo-color.svg" media="(min-width: 768px)">
-        <img src="../../public/logo-color.svg" alt="logo">
-      </picture>
-    </div>
+  <div class="content-container">
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <picture>
+            <source
+              srcset="../../public/logo-color.svg"
+              media="(min-width: 768px)"
+            />
+            <img src="../../public/logo-color.svg" alt="Logo" />
+          </picture>
+        </a>
+      </div>
 
-    <ul class="menu-list">
-      <li><a href="/">Početna</a></li>
-      <li><a href="">Trudnoća</a></li>
-      <li><a href="">Moje Opcije</a></li>
-      <li><a href="">Nakon Abortusa</a></li>
-      <li><a href="">Gnezdo za Mame</a></li>
-      <li><a href="">Kontakt</a></li>
-    </ul>
-  </nav>
+      <ul class="menu-list">
+        <li><a href="/">Početna</a></li>
+        <li><a href="#">Trudnoća</a></li>
+        <!-- <li><a href="#">Moje Opcije</a></li>
+      <li><a href="#">Nakon Abortusa</a></li> -->
+        <li><a href="#">Gnezdo za Mame</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-
-
-
-<style define:vars={{mainColor, backgroundImageUrl}}>
+<style define:vars={{ mainColor, backgroundImageUrl }}>
   a {
     text-decoration: none;
-    color: #fff
+    color: #fff;
   }
 
   li {
     list-style: none;
   }
 
+  .content-container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ul {
+    z-index: 20;
+    margin-top: 15px;
+  }
+
   picture {
-    height: 120px;
-    width: 300px;
+    height: 50px;
+    width: 160px;
   }
 
   header {
-  
     width: 100%;
     height: 300px;
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    padding: 15px;
+    position: relative;
+
+    .logo {
+      z-index: 20;
+    }
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   nav {
@@ -62,11 +91,6 @@ const backgroundImageUrl = `https://source.unsplash.com/random/?worried,girl`;
 
   .menu-list {
     display: flex;
-    gap: 1.2rem;
+    gap: 3rem;
   }
-  
 </style>
-
-
-
-
