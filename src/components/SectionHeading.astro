@@ -1,7 +1,19 @@
 ---
-const { title, icon } = Astro.props;
+import { Icon } from "astro-icon";
+const { primaryColor, textColor = "#000", icon } = Astro.props;
 ---
 
-<h2>
-  <slot />
-</h2>
+<div class="section-heading">
+  <h2>
+    {icon && <Icon name={`lucide:${icon}`} size={24} color={primaryColor} />}
+    <slot />
+  </h2>
+</div>
+
+<style define:vars={{textColor}}>
+  h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    color: var(--textColor);
+  }
+</style>

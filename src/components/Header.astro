@@ -5,12 +5,13 @@ import HeroText from "./HeroText.astro";
 import Button from "./Button.astro";
 import backgroundImg from "../assets/main-img.jpg";
 // Variables
-const mainColor = "#F38181";
 const optimizedBackgroundImage = await getImage({
   src: backgroundImg,
   format: "avif",
   quality: "mid",
 });
+
+const {primaryColor} = Astro.props
 ---
 
 <header style={`background-image: url(${optimizedBackgroundImage.src})`}>
@@ -35,14 +36,14 @@ const optimizedBackgroundImage = await getImage({
       </ul>
     </nav>
 
-    <HeroText primaryColor={mainColor} />
-    <Button primaryColor={mainColor} type={"primary"}>
+    <HeroText primaryColor={primaryColor} />
+    <Button primaryColor={primaryColor} type={"primary"}>
       Pozovi nas
     </Button>
   </div>
 </header>
 
-<style define:vars={{ mainColor }}>
+<style define:vars={{ primaryColor }}>
   a {
     text-decoration: none;
     color: #fff;
@@ -66,7 +67,7 @@ const optimizedBackgroundImage = await getImage({
       a {
         transition: 0.2s;
         &:hover {
-          color: var(--mainColor);
+          color: var(--primaryColor);
         }
       }
     }
