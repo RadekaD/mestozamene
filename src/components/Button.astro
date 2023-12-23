@@ -1,6 +1,6 @@
 ---
 
-const {primaryColor} = Astro.props;
+const { primaryColor, type = "default" } = Astro.props;
 ---
 
 
@@ -14,7 +14,7 @@ const {primaryColor} = Astro.props;
     position: relative;
     z-index: 20;
     margin-top: 20px;
-    background-color: var(--primaryColor);
+    background-color: #e5006c;
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -31,11 +31,11 @@ const {primaryColor} = Astro.props;
   }
 
   button:hover {
-    background-color: #1a73e8;
+    background-color: #f381ba;
   }
 
   button:active {
-    background-color: #0d47a1;
+    background-color: #f381ba;
   }
 
   button:focus {

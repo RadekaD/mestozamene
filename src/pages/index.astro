@@ -3,12 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Section from "../components/Section.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import { Icon } from 'astro-icon'
 ---
 
 <Layout title="Mesto za Mene | Podrška pri neplaniranoj trudnoći">
   <Header />
   <Section>
-		<SectionHeading icon="heart">
+    <Icon name="lucide:heart" size={32}/>
+		<SectionHeading >
 			Ko smo mi?
 		</SectionHeading>
     Mesto za mene je besplatno savetovalište za žene koje se suočavaju sa
