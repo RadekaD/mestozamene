@@ -1,12 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Section from "../components/Section.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 ---
 
 <Layout title="Mesto za Mene | Podrška pri neplaniranoj trudnoći">
-	<Header />
+  <Header />
+  <Section>
+		<SectionHeading icon="heart">
+			Ko smo mi?
+		</SectionHeading>
+    Mesto za mene je besplatno savetovalište za žene koje se suočavaju sa
+    neplaniranom i/ili kriznom trudnoćom i nastalo je po ugledu na centre koji
+    postoje širom sveta (Pregnancy Help Centers).
+  </Section>
 </Layout>
 
 <style>
-	
+  body {
+    background-color: #fff;
+  }
 </style>
