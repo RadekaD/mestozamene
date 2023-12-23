@@ -1,0 +1,50 @@
+---
+
+const {primaryColor} = Astro.props;
+---
+
+
+<button>
+  <a href="tel:+381642660201"><slot /></a>
+</button>
+
+
+<style define:vars={{primaryColor}}>
+  button {
+    position: relative;
+    z-index: 20;
+    margin-top: 20px;
+    background-color: var(--primaryColor);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    padding: 7px 20px;
+    transition: background-color 0.2s ease-in-out;
+    
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+
+  button:hover {
+    background-color: #1a73e8;
+  }
+
+  button:active {
+    background-color: #0d47a1;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button:disabled {
+    background-color: #e0e0e0;
+    color: rgba(0, 0, 0, 0.38);
+    cursor: default;
+  }
+</style>

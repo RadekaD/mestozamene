@@ -1,25 +1,25 @@
 ---
-// astro imports
-import { Image } from "astro:assets";
-
-// components
+import { Image, getImage } from "astro:assets";
+// Components
 import HeroText from "./HeroText.astro";
-
-// variables
+import Button from "./Button.astro";
+import backgroundImg from "../assets/main-img.jpg";
+// Variables
 const mainColor = "#F38181";
-const backgroundImageUrl = `https://source.unsplash.com/random/?worried,girl`;
+const optimizedBackgroundImage = await getImage({
+  src: backgroundImg,
+  format: "avif",
+  quality: "mid",
+});
 ---
 
-<header style={`background-image: url(${backgroundImageUrl})`}>
+<header style={`background-image: url(${optimizedBackgroundImage.src})`}>
   <div class="content-container">
     <nav>
       <div class="logo">
         <a href="/">
           <picture>
-            <source
-              srcset="../../logo-color.svg"
-              media="(min-width: 768px)"
-            />
+            <source srcset="../../logo-color.svg" media="(min-width: 768px)" />
             <img src="../../logo-color.svg" alt="Logo" />
           </picture>
         </a>
@@ -35,11 +35,14 @@ const backgroundImageUrl = `https://source.unsplash.com/random/?worried,girl`;
       </ul>
     </nav>
 
-    <HeroText />
+    <HeroText primaryColor={mainColor} />
+    <Button  primaryColor={mainColor}>
+      Pozovi nas
+    </Button>
   </div>
 </header>
 
-<style define:vars={{ mainColor, backgroundImageUrl }}>
+<style define:vars={{ mainColor }}>
   a {
     text-decoration: none;
     color: #fff;
@@ -63,13 +66,13 @@ const backgroundImageUrl = `https://source.unsplash.com/random/?worried,girl`;
       a {
         transition: 0.2s;
         &:hover {
-          color: var(--mainColor)
-
+          color: var(--mainColor);
         }
       }
     }
   }
 
+  /* logo */
   picture {
     height: 50px;
     width: 160px;
@@ -77,9 +80,9 @@ const backgroundImageUrl = `https://source.unsplash.com/random/?worried,girl`;
 
   header {
     width: 100%;
-    height: 100vh;
+    height: 720px;
     background-size: cover;
-    background-position: 80% 50%;
+    background-position: center;
     padding: 15px;
     position: relative;
 
@@ -96,7 +99,7 @@ const backgroundImageUrl = `https://source.unsplash.com/random/?worried,girl`;
     width: 100%;
     height: inherit;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(15, 23, 42, 0.45);
   }
 
   nav {
