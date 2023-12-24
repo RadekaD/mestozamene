@@ -5,15 +5,16 @@ const { primaryColor, textColor = "#000", icon } = Astro.props;
 
 <div class="section-heading">
   <h2>
-    {icon && <Icon name={`lucide:${icon}`} size={24} color={primaryColor} />}
+    {icon && <Icon name={`lucide:${icon}`} size={18} color={primaryColor} />}
     <slot />
   </h2>
 </div>
 
 <style define:vars={{textColor}}>
   h2 {
-    font-size: 1.7rem;
-    margin-bottom: 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
     color: var(--textColor);
   }
 </style>

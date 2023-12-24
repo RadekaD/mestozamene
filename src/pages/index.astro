@@ -8,37 +8,55 @@ const mainColor = "#F38181";
 ---
 
 <Layout title="Mesto za Mene | Podrška pri neplaniranoj trudnoći">
-  <Header primaryColor={mainColor}/>
+  <Header primaryColor={mainColor} />
   <Section>
-    <SectionHeading icon="heart" primaryColor={mainColor}>Ko smo mi?</SectionHeading>
-    <p>
-      Mesto za mene je besplatno savetovalište za žene koje se suočavaju sa
-      neplaniranom i/ili kriznom trudnoćom i nastalo je po ugledu na centre koji
-      postoje širom sveta (Pregnancy Help Centers).
-    </p>
-    <p>
-      Mnoge žene koje se suočavaju sa neplaniranom trudnoćom, često su bez prave
-      podrške, i nerado se odlučuju na abortus. Veliki broj njih kasnije požali
-      zbog svoje odluke i kažu da bi odabrale drugačije da su im pozitivne
-      alternative bile dostupne.
-    </p>
-    <p>
-      Informacije koje pronađete na ovom sajtu biće vam od koristi. Takođe
-      želimo da vas ohrabrimo da nas kontaktirate ili da nam pišete o vašem
-      iskustvu kao i da se informišete o tome na koje vam sve načine možemo
-      pomoći u situaciji u kojoj se nalazite. Razgovor zaista može da pomogne!
-    </p>
+    <div class="content-container">
+      <SectionHeading primaryColor={mainColor}>Ko smo mi?</SectionHeading>
+      <div class="content-text">
+        <p>
+          Mesto za mene je besplatno savetovalište za žene koje se suočavaju sa
+          neplaniranom i/ili kriznom trudnoćom i nastalo je po ugledu na centre
+          koji postoje širom sveta (Pregnancy Help Centers).
+        </p>
+        <p>
+          Mnoge žene koje se suočavaju sa neplaniranom trudnoćom, često su bez
+          prave podrške, i nerado se odlučuju na abortus. Veliki broj njih
+          kasnije požali zbog svoje odluke i kažu da bi odabrale drugačije da su
+          im pozitivne alternative bile dostupne.
+        </p>
+        <p>
+          Informacije koje pronađete na ovom sajtu biće vam od koristi. Takođe
+          želimo da vas ohrabrimo da nas kontaktirate ili da nam pišete o vašem
+          iskustvu kao i da se informišete o tome na koje vam sve načine možemo
+          pomoći u situaciji u kojoj se nalazite. Razgovor zaista može da
+          pomogne!
+        </p>
+      </div>
+    </div>
   </Section>
 
   <Section backgroundColor={"#f381ba"} textColor="#fff">
-    <SectionHeading textColor="#fff">Gnezdo za mame</SectionHeading>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate minima dicta iure sequi! Suscipit sunt vitae aliquam cupiditate nemo possimus distinctio cumque tempora, voluptatibus atque ullam asperiores dicta corrupti tempore?
-    Quod tempore aperiam dolores ipsam fuga reprehenderit hic, dolorum harum velit perferendis ab. Impedit a alias hic esse repudiandae magnam ipsa neque earum iusto minima ex, magni blanditiis nesciunt! Corporis!</p>
+    <div class="content-container">
+      <SectionHeading textColor="#fff">Gnezdo za mame</SectionHeading>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        minima dicta iure sequi! Suscipit sunt vitae aliquam cupiditate nemo
+        possimus distinctio cumque tempora, voluptatibus atque ullam asperiores
+        dicta corrupti tempore? Quod tempore aperiam dolores ipsam fuga
+        reprehenderit hic, dolorum harum velit perferendis ab. Impedit a alias
+        hic esse repudiandae magnam ipsa neque earum iusto minima ex, magni
+        blanditiis nesciunt! Corporis!
+      </p>
+    </div>
   </Section>
 </Layout>
 
-<style is:global>
-  body {
-    background-color: #fff;
+<style>
+  .content-container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
   }
+
 </style>
