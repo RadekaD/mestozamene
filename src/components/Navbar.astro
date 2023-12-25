@@ -1,29 +1,50 @@
 ---
-const { isWhite } = Astro.props;
+const { isWhite, isBanner } = Astro.props;
 const primaryColor = "#F38181";
 ---
 
-<nav>
-  <div class:list={["logo", { "logo-white": isWhite }]}>
-    <a href="/">
-      <picture>
-        <source srcset="../../logo-color.svg" media="(min-width: 768px)" />
-        <img src="../../logo-color.svg" alt="Logo" />
-      </picture>
-    </a>
-  </div>
+{
+  isBanner && (
+    <div class="top-banner">
+      <p>
+        Pozovi nas: <a href="tel:+381642660201">+381 64 266 0201</a> |{" "}
+        <a href="#">Apliciraj za smeštaj</a>
+      </p>
+    </div>
+  )
+}
+<div class="site-container">
+  <nav>
+    <div class:list={["logo", { "logo-white": isWhite }]}>
+      <a href="/">
+        <picture>
+          <source srcset="../../logo-color.svg" media="(min-width: 768px)" />
+          <img src="../../logo-color.svg" alt="Logo" />
+        </picture>
+      </a>
+    </div>
 
-  <ul class:list={["menu-list", { "menu-list-white": isWhite }]}>
-    <li><a href="/">Početna</a></li>
-    <li><a href="/trudnoca">Trudnoća</a></li>
-    <!-- <li><a href="#">Moje Opcije</a></li>
-  <li><a href="#">Nakon Abortusa</a></li> -->
-    <li><a href="#">Gnezdo za Mame</a></li>
-    <li><a href="#">Kontakt</a></li>
-  </ul>
-</nav>
+    <ul class:list={["menu-list", { "menu-list-white": isWhite }]}>
+      <li><a href="/">Početna</a></li>
+      <li><a href="/trudnoca">Trudnoća</a></li>
+      <!-- <li><a href="#">Moje Opcije</a></li>
+    <li><a href="#">Nakon Abortusa</a></li> -->
+      <li><a href="#">Gnezdo za Mame</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+</div>
 
-<style define:vars={{primaryColor}}>
+<style define:vars={{ primaryColor }}>
+  .site-container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+  }
+
   a {
     text-decoration: none;
     color: #fff;
@@ -37,6 +58,7 @@ const primaryColor = "#F38181";
     display: flex;
     justify-content: space-between;
     align-items: center;
+
   }
 
   .menu-list {
@@ -49,7 +71,7 @@ const primaryColor = "#F38181";
       margin-top: 10px;
     }
     a {
-      color: var(--primaryColor)
+      color: var(--primaryColor);
     }
   }
 
@@ -80,7 +102,18 @@ const primaryColor = "#F38181";
   .logo-white {
     picture {
       height: 40px;
-      width: 120px;
+      width: 130px;
+    }
+  }
+
+  .top-banner {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: var(--primaryColor);
+    a {
     }
   }
 </style>

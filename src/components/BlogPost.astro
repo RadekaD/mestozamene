@@ -11,7 +11,7 @@ const { author, title } = Astro.props;
 ---
 
 <div class="site-container">
-  <Navbar isWhite={true}/>
+  <Navbar isWhite={true} isBanner={true}/>
 </div>
 <article class="content-container">
   <div class="img-container">
@@ -33,14 +33,6 @@ const { author, title } = Astro.props;
 </article>
  
 <style>
-  .site-container {
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 5px;
-  }
 
   .content-container {
     max-width: 720px;
