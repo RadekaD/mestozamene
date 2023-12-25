@@ -4,6 +4,7 @@ import { Image, getImage } from "astro:assets";
 import HeroText from "./HeroText.astro";
 import Button from "./Button.astro";
 import backgroundImg from "../assets/main-img.jpg";
+import Navbar from "./Navbar.astro";
 // Variables
 const optimizedBackgroundImage = await getImage({
   src: backgroundImg,
@@ -16,25 +17,7 @@ const {primaryColor} = Astro.props
 
 <header style={`background-image: url(${optimizedBackgroundImage.src})`}>
   <div class="content-container">
-    <nav>
-      <div class="logo">
-        <a href="/">
-          <picture>
-            <source srcset="../../logo-color.svg" media="(min-width: 768px)" />
-            <img src="../../logo-color.svg" alt="Logo" />
-          </picture>
-        </a>
-      </div>
-
-      <ul class="menu-list">
-        <li><a href="/">Početna</a></li>
-        <li><a href="#">Trudnoća</a></li>
-        <!-- <li><a href="#">Moje Opcije</a></li>
-      <li><a href="#">Nakon Abortusa</a></li> -->
-        <li><a href="#">Gnezdo za Mame</a></li>
-        <li><a href="#">Kontakt</a></li>
-      </ul>
-    </nav>
+    <Navbar />
 
     <HeroText primaryColor={primaryColor} />
     <Button primaryColor={primaryColor} type={"primary"}>
@@ -59,25 +42,7 @@ const {primaryColor} = Astro.props
     margin-right: auto;
   }
 
-  ul {
-    z-index: 20;
-    margin-top: 15px;
-
-    li {
-      a {
-        transition: 0.2s;
-        &:hover {
-          color: var(--primaryColor);
-        }
-      }
-    }
-  }
-
-  /* logo */
-  picture {
-    height: 50px;
-    width: 160px;
-  }
+ 
 
   header {
     width: 100%;
@@ -86,10 +51,6 @@ const {primaryColor} = Astro.props
     background-position: center;
     padding: 15px;
     position: relative;
-
-    .logo {
-      z-index: 20;
-    }
   }
 
   header::before {
@@ -101,16 +62,5 @@ const {primaryColor} = Astro.props
     height: inherit;
     z-index: 10;
     background-color: rgba(15, 23, 42, 0.45);
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .menu-list {
-    display: flex;
-    gap: 3rem;
   }
 </style>

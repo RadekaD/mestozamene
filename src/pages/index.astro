@@ -11,26 +11,28 @@ const mainColor = "#F38181";
   <Header primaryColor={mainColor} />
   <Section>
     <div class="content-container">
-      <SectionHeading primaryColor={mainColor}>Ko smo mi?</SectionHeading>
-      <div class="content-text">
-        <p>
-          Mesto za mene je besplatno savetovalište za žene koje se suočavaju sa
-          neplaniranom i/ili kriznom trudnoćom i nastalo je po ugledu na centre
-          koji postoje širom sveta (Pregnancy Help Centers).
-        </p>
-        <p>
-          Mnoge žene koje se suočavaju sa neplaniranom trudnoćom, često su bez
-          prave podrške, i nerado se odlučuju na abortus. Veliki broj njih
-          kasnije požali zbog svoje odluke i kažu da bi odabrale drugačije da su
-          im pozitivne alternative bile dostupne.
-        </p>
-        <p>
-          Informacije koje pronađete na ovom sajtu biće vam od koristi. Takođe
-          želimo da vas ohrabrimo da nas kontaktirate ili da nam pišete o vašem
-          iskustvu kao i da se informišete o tome na koje vam sve načine možemo
-          pomoći u situaciji u kojoj se nalazite. Razgovor zaista može da
-          pomogne!
-        </p>
+      <div class="content">
+        <SectionHeading primaryColor={mainColor}>Ko smo mi?</SectionHeading>
+        <div class="content-text">
+          <p>
+            Mesto za mene je besplatno savetovalište za žene koje se suočavaju
+            sa neplaniranom i/ili kriznom trudnoćom i nastalo je po ugledu na
+            centre koji postoje širom sveta (Pregnancy Help Centers).
+          </p>
+          <p>
+            Mnoge žene koje se suočavaju sa neplaniranom trudnoćom, često su bez
+            prave podrške, i nerado se odlučuju na abortus. Veliki broj njih
+            kasnije požali zbog svoje odluke i kažu da bi odabrale drugačije da
+            su im pozitivne alternative bile dostupne.
+          </p>
+          <p>
+            Informacije koje pronađete na ovom sajtu biće vam od koristi. Takođe
+            želimo da vas ohrabrimo da nas kontaktirate ili da nam pišete o
+            vašem iskustvu kao i da se informišete o tome na koje vam sve načine
+            možemo pomoći u situaciji u kojoj se nalazite. Razgovor zaista može
+            da pomogne!
+          </p>
+        </div>
       </div>
     </div>
   </Section>
@@ -59,4 +61,10 @@ const mainColor = "#F38181";
     padding: 15px;
   }
 
+  .content {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+  }
 </style>

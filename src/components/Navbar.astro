@@ -1,0 +1,86 @@
+---
+const { isWhite } = Astro.props;
+const primaryColor = "#F38181";
+---
+
+<nav>
+  <div class:list={["logo", { "logo-white": isWhite }]}>
+    <a href="/">
+      <picture>
+        <source srcset="../../logo-color.svg" media="(min-width: 768px)" />
+        <img src="../../logo-color.svg" alt="Logo" />
+      </picture>
+    </a>
+  </div>
+
+  <ul class:list={["menu-list", { "menu-list-white": isWhite }]}>
+    <li><a href="/">Početna</a></li>
+    <li><a href="/trudnoca">Trudnoća</a></li>
+    <!-- <li><a href="#">Moje Opcije</a></li>
+  <li><a href="#">Nakon Abortusa</a></li> -->
+    <li><a href="#">Gnezdo za Mame</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+</nav>
+
+<style define:vars={{primaryColor}}>
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .menu-list-white {
+    li {
+      margin-top: 10px;
+    }
+    a {
+      color: var(--primaryColor)
+    }
+  }
+
+  ul {
+    z-index: 20;
+    margin-top: 15px;
+
+    li {
+      a {
+        transition: 0.2s;
+        &:hover {
+          color: var(--primaryColor);
+        }
+      }
+    }
+  }
+
+  .logo {
+    z-index: 20;
+  }
+
+  /* logo */
+  picture {
+    height: 50px;
+    width: 160px;
+  }
+
+  .logo-white {
+    picture {
+      height: 40px;
+      width: 120px;
+    }
+  }
+</style>

@@ -1,0 +1,91 @@
+---
+import Navbar from "./Navbar.astro";
+
+const randomImg = "https://source.unsplash.com/random/720x360/?worried,girl";
+const currentDate = new Date().toLocaleDateString("sr", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const { author, title } = Astro.props;
+---
+
+<div class="site-container">
+  <Navbar isWhite={true}/>
+</div>
+<article class="content-container">
+  <div class="img-container">
+    <img src={randomImg} alt="An image of a woman" />
+  </div>
+  <h1>{title}</h1>
+  <div class="meta-data">
+    <div class="author">
+      <p>Autor: {author}</p>
+    </div>
+
+    <div class="date">
+      <p>{currentDate}</p>
+    </div>
+  </div>
+  <div class="content-text">
+    <slot />
+  </div>
+</article>
+ 
+<style>
+  .site-container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+  }
+
+  .content-container {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+  .img-container {
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      width: 720px;
+      height: 360px;
+      border-radius: 25px;
+    }
+  }
+
+  .meta-data {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 2px dashed #ccc;
+    border-bottom: 2px dashed #ccc;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  .content-text {
+    p {
+
+      margin-bottom: 20px;
+    }
+  }
+</style>
