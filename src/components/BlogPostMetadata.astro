@@ -1,0 +1,31 @@
+---
+const currentDate = new Date().toLocaleDateString("sr", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const { author } = Astro.props;
+---
+
+<div class="meta-data">
+  <div class="author">
+    <p>Autor: {author}</p>
+  </div>
+
+  <div class="date">
+    <p>{currentDate}</p>
+  </div>
+</div>
+
+<style>
+    .meta-data {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 2px dashed #ccc;
+    border-bottom: 2px dashed #ccc;
+  }
+</style>

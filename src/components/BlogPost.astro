@@ -1,13 +1,11 @@
 ---
 import Navbar from "./Navbar.astro";
+import BlogPostMetaData from "./BlogPostMetadata.astro";
+import Footer from "./Footer.astro";
 
 const randomImg = "https://source.unsplash.com/random/720x360/?worried,girl";
-const currentDate = new Date().toLocaleDateString("sr", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
-const { author, title } = Astro.props;
+
+const {title} = Astro.props;
 ---
 
 <div class="site-container">
@@ -18,22 +16,18 @@ const { author, title } = Astro.props;
     <img src={randomImg} alt="An image of a woman" />
   </div>
   <h1>{title}</h1>
-  <div class="meta-data">
-    <div class="author">
-      <p>Autor: {author}</p>
-    </div>
-
-    <div class="date">
-      <p>{currentDate}</p>
-    </div>
-  </div>
+  <BlogPostMetaData author="Vesna Radeka" />
   <div class="content-text">
     <slot />
   </div>
 </article>
- 
+<Footer />
 <style>
 
+  article {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
   .content-container {
     max-width: 720px;
     margin-left: auto;
@@ -51,17 +45,6 @@ const { author, title } = Astro.props;
       height: 360px;
       border-radius: 25px;
     }
-  }
-
-  .meta-data {
-    display: flex;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-top: 2px dashed #ccc;
-    border-bottom: 2px dashed #ccc;
   }
 
   h1 {

@@ -1,0 +1,162 @@
+---
+import { Icon } from "astro-icon";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="content-container">
+    <div class="content-block">
+      <div class="logo">
+        <a href="/">
+          <picture>
+            <source srcset="../../logo-white.svg" media="(min-width: 768px)" />
+            <img src="../../logo-white.svg" alt="Logo" />
+          </picture>
+        </a>
+      </div>
+      <p>
+        Mesto za mene je besplatno savetovalište za žene koje se suočavaju sa
+        neplaniranom i/ili kriznom trudnoćom
+      </p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/mestozamene" target="_blank">
+          <Icon name={`lucide:facebook`} size={18} color="fff" />
+        </a>
+        <a href="https://www.instagram.com/mestozamene/" target="_blank">
+          <Icon name={`lucide:instagram`} size={18} color="fff" />
+        </a>
+        <a href="https://www.instagram.com/mestozamene/" target="_blank">
+          <Icon name={`lucide:mail`} size={18} color="fff" />
+        </a>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h2>Trudnoća</h2>
+      <ul>
+        <li><a href="/">Da li sam trudna?</a></li>
+        <li><a href="/">Simptomi trudnoće</a></li>
+        <li><a href="/">Utvrđivanje trudnoće</a></li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <h2>Moje Opcije</h2>
+      <ul>
+        <li><a href="/">Da li sam trudna?</a></li>
+        <li><a href="/">Simptomi trudnoće</a></li>
+        <li><a href="/">Utvrđivanje trudnoće</a></li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <h2>Gnezdo za mame</h2>
+      <ul>
+        <li><a href="/">Da li sam trudna?</a></li>
+        <li><a href="/">Simptomi trudnoće</a></li>
+        <li><a href="/">Utvrđivanje trudnoće</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>&copy; {currentYear} Udruženje građana Mesto za mene | Klauzula o odbijanju odgovornosti</p>
+  </div>
+  
+</footer>
+
+<style>
+  footer {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    /* background: rgb(243, 129, 129);
+    background: linear-gradient(
+      180deg,
+      rgba(243, 129, 129, 1) 20%,
+      rgba(249, 164, 165, 1) 63%,
+      rgba(251, 214, 238, 1) 100%
+    ); */
+    background: rgb(166, 172, 194);
+    background: linear-gradient(
+      360deg,
+      rgba(166, 172, 194, 1) 0%,
+      rgba(133, 140, 169, 1) 48%
+    );
+  }
+
+  .content-container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    gap: 70px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  .content-block {
+    display: flex;
+    flex-direction: column;
+
+    &:first-of-type {
+      width: 35%;
+    }
+    h2 {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: 5px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      color: #fff;
+      margin-top: 35px;
+      margin-bottom: 35px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+
+      a {
+        color: #fff;
+        background-color: #555b88;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .copyright {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    text-align: center;
+
+    p {
+      color: #fff;
+    }
+  }
+</style>
